@@ -37,10 +37,12 @@ select.addEventListener('change', () => {
       on.removeChild(on.children[0])
       on.setAttribute('id','imageBoxOff')
     }
-
-    let oneChar = document.getElementById("oneChar")
-    // oneChar.removeAttribute("id");
-    oneChar.setAttribute("id","oneCharOff")
+    if(document.getElementById("oneChar") != null)
+    {
+      let oneChar = document.getElementById("oneChar")
+      // oneChar.removeAttribute("id");
+      oneChar.setAttribute("id","oneCharOff")
+    }
     
     let button = document.getElementById("extract")
     button.removeAttribute("onclick");
@@ -91,6 +93,7 @@ function OneCharRun(){
 function textToNum(){
     // const string = 'test1 +91 9443134651 test2 +1 671-765-0091 +33442207724';
     let put = document.getElementById('put');
+    put.value = "";
     const string = document.getElementById("get").value;
     let phone_numbers = [];
     const regexp = new RegExp("\\+?\\(?\\d*\\)? ?\\(?\\d+\\)?\\d*([\\s./-]?\\d{2,})+","g");
