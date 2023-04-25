@@ -6,12 +6,17 @@ select.addEventListener('change', () => {
   console.log(check)
   if(check == 'custom')
   {
-
-    let get = document.getElementById("getOff")
-    get.setAttribute('id','get')
-    let on = document.getElementById("imageBox");
-    on.removeChild(on.children[0])
-    on.setAttribute('id','imageBoxOff')
+    if(document.getElementById("getOff") != null)
+    {
+      let get = document.getElementById("getOff")
+      get.setAttribute('id','get')
+    }
+    if(document.getElementById("imageBox") != null)
+    {
+      let on = document.getElementById("imageBox");
+      on.removeChild(on.children[0])
+      on.setAttribute('id','imageBoxOff')
+    }
 
     let oneChar = document.getElementById("oneCharOff")
     // oneChar.removeAttribute("id");
@@ -21,21 +26,32 @@ select.addEventListener('change', () => {
     button.setAttribute("onclick","OneCharRun()")
   }
   else if(check == 'textToNum'){
-    let get = document.getElementById("getOff")
-    get.setAttribute('id','get')
-    let on = document.getElementById("imageBox");
-    on.removeChild(on.children[0])
-    on.setAttribute('id','imageBoxOff')
+    if(document.getElementById("getOff") != null)
+    {
+      let get = document.getElementById("getOff")
+      get.setAttribute('id','get')
+    }
+    if(document.getElementById("imageBox") != null)
+    {
+      let on = document.getElementById("imageBox");
+      on.removeChild(on.children[0])
+      on.setAttribute('id','imageBoxOff')
+    }
 
-
+    let oneChar = document.getElementById("oneChar")
+    // oneChar.removeAttribute("id");
+    oneChar.setAttribute("id","oneCharOff")
     
     let button = document.getElementById("extract")
     button.removeAttribute("onclick");
     button.setAttribute("onclick","textToNum()")
   }
   else{
-    let get = document.getElementById("get")
-    get.setAttribute('id','getOff')
+    if(document.getElementById("get") != null)
+    {
+      let get = document.getElementById("get")
+      get.setAttribute('id','getOff')
+    }
     let on = document.getElementById("imageBoxOff");
     on.setAttribute('id','imageBox')
     on.innerHTML = `
